@@ -94,14 +94,7 @@ class Program
         logw("Quick start? (true/false): ");
         QuickStart = Console.ReadLine();
         logw("Unlock method (0 = Hybrid, 1 = Memory Write, 2 = Flags File): ");
-        if (!isInt(Console.ReadLine()))
-        {
-            log("Invalid number. Setting it to 1 anyways.");
-            UnlockMethod = 1;
-        } else
-        {
-            UnlockMethod = Convert.ToInt32(Console.ReadLine());
-        }
+        UnlockMethod = int.Parse(Console.ReadLine());
 
         // create the settings file
         string SettingsFile = "UnlockClient=" + UnlockClient + "\nUnlockStudio=" + UnlockStudio + "\n" + FPSValues + "\nFPSCapSelection=0" + "\nFPSCap=" + FPSCap + "\nCheckForUpdates=" + CheckForUpdates + "\nNonBlockingErrors=" + NonBlockingErrors + "\nSilentErrors=" + SilentErrors + "\nQuickStart=" + QuickStart + "\nUnlockMethod=" + UnlockMethod;
